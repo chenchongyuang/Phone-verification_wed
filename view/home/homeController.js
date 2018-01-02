@@ -1,13 +1,10 @@
 angular.module('app')
-  .controller('homeController',['$scope','$http',function($scope,$http){
-  	$scope.click=function(){
-  		$http({
-  			url:'http://127.0.0.1:9000',
-  			method:'GET'
-  		})
-  		.success(function(data){
-  			$scope.data=data;
-  			console.log(data);
-  		})
-  	}
+  .controller('homeController',['$scope','API',function($scope,API){
+  	    $scope.getaa=function(){
+  	    	console.log(1);
+          API.aa('http://127.0.0.1:9000/message')
+          .then(function(data){
+                  console.log(data);
+          })
+        }
   }])
