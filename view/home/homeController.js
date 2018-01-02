@@ -1,0 +1,13 @@
+angular.module('app')
+  .controller('homeController',['$scope','$http',function($scope,$http){
+  	$scope.click=function(){
+  		$http({
+  			url:'http://127.0.0.1:9000',
+  			method:'GET'
+  		})
+  		.success(function(data){
+  			$scope.data=data;
+  			console.log(data);
+  		})
+  	}
+  }])
